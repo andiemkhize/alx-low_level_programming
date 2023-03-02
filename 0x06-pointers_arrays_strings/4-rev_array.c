@@ -10,13 +10,13 @@
 
 void reverse_array(int *a, int n)
 {
-	int k;
+	int i;
 	int j;
 
-	for (k = 0; k < n--; k++)
+	for (i = 0; i < n--; i++)
 	{
-		j = a[k];
-		a[k] = a[n];
+		j = a[i];
+		a[i] = a[n];
 		a[n] = j;
 	}
 }
