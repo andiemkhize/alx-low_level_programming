@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_number - print number char
+ * print_number - print numbers chars
  * @n: integer params
  * Return: 0
  */
