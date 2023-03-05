@@ -1,12 +1,15 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * add - adds two integers and returns the result
+ * add - adds two values
+ * @n1: the first number to be computed
+ * @n2:the second numer to be computed
  *
- * Return: 0
+ * Return: interger value
  */
 
-int add(int a, int b)
+int add(int n1, int n2)
 {
-	return (printf("%d", a + b));
+	return (n1 + n2);
 }
+
+
