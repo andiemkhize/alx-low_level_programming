@@ -13,6 +13,7 @@ int _evaluate(int n, int i);
 int is_prime_number(int n);
 int _evaluate_num(int num, int iterator);
 int is_palindrome(char *s);
+int comparator(char *s, int n1, int n2);
 int _strlen_recursion(char *s);
 int p1(char *s, int l);
 int wildcmp(char *s1, char *s2);
