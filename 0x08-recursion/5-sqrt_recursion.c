@@ -1,42 +1,36 @@
 #include "main.h"
-/**
- * _evaluate - evaluate function sqrt
- * @n: interger
- * @i: interger
- * Return: evaluate sqrt
- */
+#include <stdio.h>
 
-int _evaluate(int n, int i)
-{
-	if (n == 0 || n == 1)
-		return (n);
-
-	else if (i * i < n)
-		return (_evaluate(i + 1, n));
-
-	else if (i * i == n)
-		return (i);
-
-	return (-1);
-
-	return (-1);
-}
+int _sqrt(int n, int i);
 
 /**
- * _sqrt_recursion -  returns the natural square root of a number
- * @n: interger
- * Return: sqrt_recursion
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number to calculate the natural square root
+ *
+ * Return: the natural sqaure root
  */
 
 int _sqrt_recursion(int n)
 {
-	int i = 0;
+	return (_sqrt(n, 1));
+}
 
-	if (i < 0)
+/**
+ * _sqrt - calculates natural sqaure root
+ * @n: number to calculate the natural square root
+ * @i: iterate number
+ * Return: the natural square root
+ */
+
+int _sqrt(int n, int i)
+{
+	int sqrt = i * i;
+
+	if (sqrt > n)
 		return (-1);
 
-	else
-	{
-		return (_evaluate(i, n));
-	}
+	if (sqrt == n)
+		return (i);
+
+	return (_sqrt(n, i + 1));
 }
