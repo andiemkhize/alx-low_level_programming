@@ -18,6 +18,8 @@ int _evaluate(int n, int i)
 		return (i);
 
 	return (-1);
+
+	return (-1);
 }
 
 /**
