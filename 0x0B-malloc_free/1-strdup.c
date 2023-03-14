@@ -49,14 +49,13 @@ char *_strcpy(char *dest, char *src)
 char *_strdup(char *str)
 {
 	char *dest;
-	unsigned int size;
 
 	if (str == 0)
 	{
 		return (NULL);
 	}
 
-	size = _strlen(str) + 1;
+	size_t = (_strlen(str) + 1);
 	dest = (char *) malloc(sizeof(char));
 
 	if (dest == 0)
