@@ -1,67 +1,44 @@
 #include "main.h"
-#include <stddef.h>
 #include <stdlib.h>
 
 /**
- * _strlen - count array
- * @s: array of elements
- * Return: 1
- */
-
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (1);
-}
-
-/**
- * _strcpy - copy arrays
- * @src: array of elements
- * @dest: dest array
- * Return: dest
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int i = 0;
-
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-/**
- * _strdup - array for prints a string
- * @str: array of elements
- * Return: pointer
+ * _strdup - returns a pointer to a newly allocated
+ *  space in memory, which contains a copy of the string
+ *  passed
+ *  @str: pointer to string being duplicated
+ *
+ *  Return: NULL if string is NULL
+ *  pointer to duplicated string on success
+ *  NULL if memory was insufficient
  */
 
 char *_strdup(char *str)
 {
-	char *dest;
+	char *nstr;
+	unsigned int len, i;
 
-	if (str == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	size_t = (_strlen(str) + 1);
-	dest = (char *) malloc(sizeof(char));
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
 
-	if (dest == 0)
+	nstr = malloc(sizeof(char) * (len + 1));
+
+	if (nstr == NULL)
 	{
 		return (NULL);
 	}
-	_strcpy(dest, str);
-	return (dest);
+
+	for (i = 0; i < len; i++)
+	{
+		nstr[i] = str[i];
+	}
+	nstr[len] = '\0';
+	return (nstr);
 }
