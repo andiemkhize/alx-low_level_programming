@@ -1,18 +1,19 @@
 #include "main.h"
+
 /**
- * malloc_checked - array of pointer to string
+ * malloc_checked - array of prints a string
  * @b: number of memory
  * Return: void
  */
 
 void *malloc_checked(unsigned int b)
 {
-	void *p
+	void *p;
 
 		p = malloc(b);
 	if (p == NULL)
 	{
-		exist (98);
+		exit(98);
 	}
 	return (p);
 }
