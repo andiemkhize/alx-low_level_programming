@@ -2,8 +2,8 @@
 
 /**
  * create_file - creates a file
- * @filename: pointer to the text file being created
- * @text_content: pointer to the string
+ * @filename: pointer to the file being created
+ * @text_content: pointer to the string to write to the fie
  *
  * Return: On success, 1
  * On failure, -1
@@ -22,11 +22,11 @@ int create_file(const char *filename, char *text_content)
 				len++;
 	}
 
-	fd = open(filename, O_CREAT | 0_WRONLY | O_TRUNC, 0600);
+	fd = open(filename, O_CREAT | 0_RDWR | O_TRUNC, 0600);
 	w = write(fd, text_content, len);
 
 	if (fd == -1 || w == -1)
-		return (1);
+		return (-1);
 	close(fd);
 	return (1);
 }
