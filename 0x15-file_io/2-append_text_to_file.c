@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * append_text_to_file - appends text at the end of a file
@@ -11,31 +12,38 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int s, w, len = 0;
+	int fd, w;
 
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content != NULL)
-	{
-		s = open(filename, O_WRONLY | O_APPEND);
-
-	if (s == -1)
+	fd = open(filename, O_RDWR | O_APPEND);
+	if (fd == -1)
 		return (-1);
 
-	if (text_content)
+	if (text_content != NULL)
 	{
-		for (len = 0; text_content[len]; len++)
-			;
+		w = write(fd, text_content, strlen(text_content));
 
-		w = write(s, text_content, len);
-	}
-
-	else (s == -1 || w == -1);
+		if (w == -1)
 			return (-1);
-
-	close(s);
-
-	return (1);
 	}
+
+	close(fd);
+	return (1);
+}
+
+/**
+ * _strlen - calculate the lenght of a string.
+ * @str: array of characters.
+ *
+ * Return: lenght of the string.
+ */
+int _strlen(char *str)
+{
+	int count = 0;
+
+	while (*str++)
+		count++;
+	return (count);
 }
